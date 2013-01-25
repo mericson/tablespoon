@@ -16,11 +16,11 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "tablespoon"
   gem.homepage = "http://github.com/mericson/tablespoon"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.license = "GPL"
+  gem.summary = %Q{Read and write Google Spreadsheets like records}
+  gem.description = %Q{Read and write Google Spreadsheets like records}
   gem.email = "mericson@ericson.net"
-  gem.authors = ["Matt Ericson"]
+  gem.authors = ["Matthew Ericson"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
