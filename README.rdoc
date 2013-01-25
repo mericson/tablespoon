@@ -7,6 +7,9 @@ Access Google Spreadsheets in a vaguely record-like way.
 * Google Spreadsheet that is organized like a database table. Fieldnames in the first row, records in the rest of the rows.
 
 == How to Use
+ 
+  require 'rubygems'
+  require 'tablespoon'
 
 Connect to a Google doc
 
