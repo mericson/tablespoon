@@ -1,16 +1,34 @@
 = tablespoon
 
-Description goes here.
+Access Google Spreadsheets in a vaguely record-like way. 
 
-== Contributing to tablespoon
+== Requirements
  
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
-* Fork the project.
-* Start a feature/bugfix branch.
-* Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+* Google Spreadsheet that is organized like a database table. Fieldnames in the first row, records in the rest of the rows.
+
+== How to Use
+
+1. Connect to a Google doc
+
+doc   = Tablespoon::Doc.new( "0ArhhvPZdTe-WdGpZQ3pEY1hDcEUxWmxwNnJEQ3g4aVE", 
+                           :username => google_username, :password => google_password )
+			  
+2. Get a worksheet either by name or by id. Optionally, declare an id field so you can find rows by id later.
+
+rows = doc.get_table 'Sheet1', :id_field => 'last-name' 
+
+3. Loop thru rows and retrieve data
+
+rows.each do |r|
+  puts r['full-name']    
+end
+
+4. Modify fields and save data
+
+rows.each do |r|
+  r['full-name'] = r['full-name'].upcase
+end
+
 
 == Copyright
 
