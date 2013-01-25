@@ -8,22 +8,22 @@ Access Google Spreadsheets in a vaguely record-like way.
 
 == How to Use
 
-1. Connect to a Google doc
+Connect to a Google doc
 
   doc   = Tablespoon::Doc.new( "0ArhhvPZdTe-WdGpZQ3pEY1hDcEUxWmxwNnJEQ3g4aVE", 
                            :username => google_username, :password => google_password )
 			  
-2. Get a worksheet either by name or by id. Optionally, declare an id field so you can find rows by id later.
+Get a worksheet either by name or by id. (Coming soon: Optionally, declare an id field so you can find rows by id later.)
 
   rows = doc.get_table 'Sheet1', :id_field => 'last-name' 
 
-3. Loop thru rows and retrieve data
+Loop thru rows and retrieve data
 
   rows.each do |r|
     puts r['full-name']    
   end
 
-4. Modify fields and save data
+Modify fields and save data
 
   rows.each do |r|
     r['full-name'] = r['full-name'].upcase
