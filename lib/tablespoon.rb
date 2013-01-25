@@ -115,7 +115,6 @@ module Tablespoon
     end
 
     def []= (field,value)
-      puts "Setting {field}  to {value]"
 
       ## get the column number where we think it is
       ## if it's not there, rebuild the field map
