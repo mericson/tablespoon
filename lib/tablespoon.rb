@@ -8,7 +8,6 @@ module Tablespoon
     attr_reader :session, :doc
     
     def initialize( key, opts = {} )
-      pp opts
       if opts[:username] && opts [:password]
         @session = GoogleDrive.login( opts[:username], opts[:password] )
         @doc   = session.spreadsheet_by_key( key )
@@ -43,8 +42,6 @@ module Tablespoon
 
 
       build_column_map
-      pp @column_map
-      pp @field_map
 
       # build data array
       
@@ -58,12 +55,12 @@ module Tablespoon
         
         for col in 1..@ws.num_cols
           data[ column_map[col] ] = @ws[ row, col ]
-
+          
           if column_map[col] == @id_field
             r.id = @ws[ row, col ]
           end
         end
-
+        
         r.data=data
         
         @rows << r
@@ -74,6 +71,14 @@ module Tablespoon
     
     def []
       return @rows[i]
+    end
+
+    def length
+      return @rows.length
+    end
+    
+    def last
+      return @rows.last
     end
 
     def each

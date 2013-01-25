@@ -15,9 +15,8 @@ doc   = Tablespoon::Doc.new( "0ArhhvPZdTe-WdGpZQ3pEY1hDcEUxWmxwNnJEQ3g4aVE",
 justices = doc.get_table 'Sheet1', :id_field => 'last-name'
 
 justices.each do |r|
-  puts "hi"
-  r['full-name']       = r['full-name'].downcase 
+  r['full-name']       = r['full-name'].upcase 
   puts r['some_value'] = 'monkeys'
-  sleep 1
+  sleep 2
 end
 

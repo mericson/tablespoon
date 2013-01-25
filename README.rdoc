@@ -30,12 +30,12 @@ Loop thru rows and retrieve data
     puts r['full-name']    
   end
 
-Modify fields and save data
+Modify fields and save data back to the spreadsheet.
 
   rows.each do |r|
     r['full-name'] = r['full-name'].upcase
   end
-
+  
 
 == Copyright
 
