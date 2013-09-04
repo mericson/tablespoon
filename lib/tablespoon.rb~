@@ -172,7 +172,7 @@ module Tablespoon
     end
 
     def to_s
-      return "Row #{@row_num} Id #{@id} " + @data.keys.collect { |a| "#{a}: #{@data[a]}" }.join(' - ')
+      return "Row #{@row_num} Id #{@id} " + @data.keys.collect { |a| "#{a}: #{@data[a]}" }.join ( ' - ' )
     end
     
   end
