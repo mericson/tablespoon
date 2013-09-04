@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "tablespoon"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matthew Ericson"]
-  s.date = "2013-01-25"
+  s.date = "2013-09-04"
   s.description = "Read and write Google Spreadsheets like records"
   s.email = "mericson@ericson.net"
   s.extra_rdoc_files = [
@@ -43,20 +43,20 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<google_drive>, [">= 0.3.0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.1.0"])
+      s.add_development_dependency(%q<bundler>, ["~> 1.3.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
     else
       s.add_dependency(%q<google_drive>, [">= 0.3.0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
-      s.add_dependency(%q<bundler>, ["~> 1.1.0"])
+      s.add_dependency(%q<bundler>, ["~> 1.3.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
     end
   else
     s.add_dependency(%q<google_drive>, [">= 0.3.0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<rdoc>, ["~> 3.12"])
-    s.add_dependency(%q<bundler>, ["~> 1.1.0"])
+    s.add_dependency(%q<bundler>, ["~> 1.3.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
   end
 end
