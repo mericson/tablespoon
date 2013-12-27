@@ -33,7 +33,6 @@ module Tablespoon
     include Enumerable
     
     attr_accessor :doc, :ws, :column_map, :field_map, :id_field, :include_blank_rows
-    attr_reader :rows
     
     def initialize( ws, opts = {} ) 
       @ws = ws
@@ -41,7 +40,6 @@ module Tablespoon
       # handle some options
       @id_field = opts[:id_field]
       @include_blank_row = opts[:include_blank_rows] || true
-
 
       build_column_map
 
@@ -81,7 +79,6 @@ module Tablespoon
       r.data = {}
 
       r
-
     end
 
     def length
@@ -119,6 +116,14 @@ module Tablespoon
       end
       
       @field_map = column_map.invert
+    end
+
+    def dump
+      output = []
+
+      @rows.each do |r|
+        outputs << r.data
+      end
     end
     
   end
