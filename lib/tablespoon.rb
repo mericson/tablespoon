@@ -17,7 +17,7 @@ module Tablespoon
     end
 
     def get_table( x, opts = {} )
-      pp @doc
+
       if x.class == String
         return Table.new @doc.worksheet_by_title( x ), opts
       else
