@@ -124,7 +124,11 @@ module Tablespoon
       @rows.each do |r|
         output << r.data
       end
+
+      output 
     end
+
+    
     
   end
 
