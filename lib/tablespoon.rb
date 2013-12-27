@@ -1,5 +1,6 @@
 require 'google_drive'
 require 'pp'
+require 'JSON' 
 
 module Tablespoon
 
@@ -128,8 +129,11 @@ module Tablespoon
       output 
     end
 
-    
-    
+    def to_json
+      JSON.dump( self.dump )
+    end
+
+
   end
 
   class Record
