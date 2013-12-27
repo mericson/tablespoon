@@ -130,9 +130,8 @@ module Tablespoon
     end
 
     def to_json
-      JSON.dump( self.dump )
+      JSON.dump( dump )
     end
-
 
   end
 
