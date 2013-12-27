@@ -33,7 +33,7 @@ module Tablespoon
     include Enumerable
     
     attr_accessor :doc, :ws, :column_map, :field_map, :id_field, :include_blank_rows
-    att_reader :rows
+    attr_reader :rows
     
     def initialize( ws, opts = {} ) 
       @ws = ws
