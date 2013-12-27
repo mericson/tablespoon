@@ -17,6 +17,7 @@ module Tablespoon
     end
 
     def get_table( x, opts = {} )
+      pp @doc
       if x.class == String
         return Table.new @doc.worksheet_by_title( x ), opts
       else
@@ -32,6 +33,7 @@ module Tablespoon
     include Enumerable
     
     attr_accessor :doc, :ws, :column_map, :field_map, :id_field, :include_blank_rows
+    att_reader :rows
     
     def initialize( ws, opts = {} ) 
       @ws = ws
@@ -68,9 +70,18 @@ module Tablespoon
       end
       
     end
-    
+
     def []
       return @rows[i]
+    end
+
+    def add_row
+      r = Record.new self
+      r.row_num = @ws.num_rows + 1
+      r.data = {}
+
+      r
+
     end
 
     def length
@@ -85,10 +96,16 @@ module Tablespoon
       @rows.each { |i| yield i }
     end
 
-    def find
+    def find( field, value )
+      @rows.find { |r| r[field] == value }
     end
     
-    def find_by_id
+    def find_by_id( value )
+      @rows.find { |r| r.id == value }
+    end
+
+    def find_all( field, value )
+      @rows.select { |r| r[field] == value }
     end
 
     def save
@@ -123,22 +140,13 @@ module Tablespoon
       col_num = get_col_num( field )
       row_num = @row_num
       
-      ## if we have an id field defined, check to make
-      ## sure the row we are updating matches
+      @ws[row_num, col_num] = value
 
-      if @id_field
-        id_col_num = get_col_num( @id_field )
-        if @ws[row_num, id_col_num] == id
-          @ws[row_num, col_num] = value
-        else
-          raise "Row has moved"
-        end
-      
-      else
-        @ws[row_num, col_num] = value
-      end
-      
       @ws.save
+      
+      if field == @id_field
+        @id = value
+      end
       
     end
     
