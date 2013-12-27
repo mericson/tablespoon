@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "tablespoon"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matthew Ericson"]
-  s.date = "2013-09-04"
+  s.date = "2013-12-27"
   s.description = "Read and write Google Spreadsheets like records"
   s.email = "mericson@ericson.net"
   s.extra_rdoc_files = [
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/mericson/tablespoon"
   s.licenses = ["GPL"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.25"
   s.summary = "Read and write Google Spreadsheets like records"
 
   if s.respond_to? :specification_version then
