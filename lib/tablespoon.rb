@@ -122,7 +122,7 @@ module Tablespoon
       output = []
 
       @rows.each do |r|
-        outputs << r.data
+        output << r.data
       end
     end
     
